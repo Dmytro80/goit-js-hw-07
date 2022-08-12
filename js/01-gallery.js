@@ -35,23 +35,20 @@ function onGalleryContainerClick(evt) {
     `<img src="${modalImg}" width="800" height="600">`,
     {
       onShow: () => {
-        console.log("onShow", createModalItemGallery);
         window.addEventListener("keydown", onEscPressKey);
       },
 
       onClose: () => {
-        console.log("onClose", createModalItemGallery);
         window.removeEventListener("keydown", onEscPressKey);
       },
     }
   );
 
   createModalItemGallery.show();
-}
 
-function onEscPressKey(evt) {
-  if (evt.code === "Escape") {
-    console.log("hi");
-    createModalItemGallery.close();
+  function onEscPressKey(evt) {
+    if (evt.code === "Escape") {
+      createModalItemGallery.close();
+    }
   }
 }
