@@ -30,10 +30,9 @@ function onGalleryContainerClick(evt) {
     return;
   }
 
-  const imageEl = evt.target;
-  imageEl.src = evt.target.dataset.source;
-
-  const createModalItemGallery = basicLightbox.create(`${imageEl}`);
+  const createModalItemGallery = basicLightbox.create(
+    `<img src="${evt.target.dataset.source}" width="800" height="600">`
+  );
 
   createModalItemGallery.show();
 }
