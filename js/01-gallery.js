@@ -3,9 +3,9 @@ import { galleryItems } from "./gallery-items.js";
 
 const galleryRef = document.querySelector(".gallery");
 
-const createListItemsGalerry = galleryItems.map(makeItemGallery).join("");
+const createListItemsGallery = galleryItems.map(makeItemGallery).join("");
 
-galleryRef.insertAdjacentHTML("beforeend", createListItemsGalerry);
+galleryRef.insertAdjacentHTML("beforeend", createListItemsGallery);
 
 galleryRef.addEventListener("click", onGalleryContainerClick);
 
@@ -32,7 +32,7 @@ function onGalleryContainerClick(evt) {
   const modalImg = evt.target.dataset.source;
 
   const createModalItemGallery = basicLightbox.create(
-    `<img src="${modalImg}" width="800" height="600">`,
+    `<img src="${modalImg}">`,
     {
       onShow: () => {
         window.addEventListener("keydown", onEscPressKey);
